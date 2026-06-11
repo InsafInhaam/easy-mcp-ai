@@ -325,6 +325,12 @@ class Tool_Registry {
             'Easy_MCP_AI\\Tools\\Semrush\\Url_Organic_Keywords',
             'Easy_MCP_AI\\Tools\\Semrush\\Api_Units_Balance',
 
+            // GEO — Generative Engine Optimisation
+            'Easy_MCP_AI\\Tools\\GEO\\Get_Llms_Txt',
+            'Easy_MCP_AI\\Tools\\GEO\\Update_Llms_Txt',
+            'Easy_MCP_AI\\Tools\\GEO\\Get_Entity_Context',
+            'Easy_MCP_AI\\Tools\\GEO\\Audit_Geo_Readiness',
+
             // Schema — structured data (JSON-LD) management
             'Easy_MCP_AI\\Tools\\Schema\\Get_Post_Schema',
             'Easy_MCP_AI\\Tools\\Schema\\Update_Post_Schema',

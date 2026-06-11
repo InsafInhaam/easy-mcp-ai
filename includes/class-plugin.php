@@ -445,7 +445,7 @@ class Plugin {
             'posts', 'pages', 'media', 'taxonomy', 'comments',
             'users', 'site', 'menus', 'plugins', 'themes',
             'revisions', 'meta', 'search', 'blocks', 'cpt', 'templates', 'styles',
-            'history', 'schema', 'filesystem', 'database',
+            'history', 'schema', 'filesystem', 'database', 'geo',
         );
 
         
