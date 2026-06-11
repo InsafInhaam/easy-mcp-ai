@@ -337,11 +337,13 @@ class Tool_Registry {
             'Easy_MCP_AI\\Tools\\Schema\\Audit_Schema_Coverage',
             'Easy_MCP_AI\\Tools\\Schema\\List_Schema_Types',
 
-            // Filesystem — theme and plugin source file access
+            // Filesystem — theme, plugin, and wp-content source file access
             'Easy_MCP_AI\\Tools\\Filesystem\\Get_Theme_File',
             'Easy_MCP_AI\\Tools\\Filesystem\\List_Theme_Files',
             'Easy_MCP_AI\\Tools\\Filesystem\\Get_Plugin_File',
             'Easy_MCP_AI\\Tools\\Filesystem\\List_Plugin_Files',
+            'Easy_MCP_AI\\Tools\\Filesystem\\List_Wp_Content',
+            'Easy_MCP_AI\\Tools\\Filesystem\\Get_Wp_Content_File',
 
             // Database — read-only SQL queries
             'Easy_MCP_AI\\Tools\\Database\\Run_DB_Query',
