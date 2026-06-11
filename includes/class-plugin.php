@@ -38,6 +38,7 @@ class Plugin {
         
         \add_action( 'rest_api_init', array( $this, 'register_rest_routes' ) );
         \add_action( 'init', array( $this, 'handle_well_known' ), 0 );
+        \add_action( 'wp_head', array( $this, 'output_post_schema' ) );
         
         
         
@@ -444,7 +445,7 @@ class Plugin {
             'posts', 'pages', 'media', 'taxonomy', 'comments',
             'users', 'site', 'menus', 'plugins', 'themes',
             'revisions', 'meta', 'search', 'blocks', 'cpt', 'templates', 'styles',
-            'history',
+            'history', 'schema', 'filesystem', 'database',
         );
 
         
@@ -704,6 +705,27 @@ class Plugin {
             require_once $oauth_schema_file;
             OAuth\OAuth_Schema::maybe_upgrade();
         }
+    }
+
+    public function output_post_schema() {
+        if ( ! \is_singular() ) {
+            return;
+        }
+        $post_id = \get_the_ID();
+        if ( ! $post_id ) {
+            return;
+        }
+        $json = \get_post_meta( $post_id, '_easy_mcp_schema', true );
+        if ( empty( $json ) ) {
+            return;
+        }
+        $decoded = json_decode( $json );
+        if ( ! $decoded ) {
+            return;
+        }
+        echo '<script type="application/ld+json">' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            . \wp_json_encode( $decoded, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            . '</script>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     public function get_server() { return $this->server; }

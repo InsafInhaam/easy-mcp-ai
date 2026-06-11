@@ -325,6 +325,12 @@ class Tool_Registry {
             'Easy_MCP_AI\\Tools\\Semrush\\Url_Organic_Keywords',
             'Easy_MCP_AI\\Tools\\Semrush\\Api_Units_Balance',
 
+            // Schema — structured data (JSON-LD) management
+            'Easy_MCP_AI\\Tools\\Schema\\Get_Post_Schema',
+            'Easy_MCP_AI\\Tools\\Schema\\Update_Post_Schema',
+            'Easy_MCP_AI\\Tools\\Schema\\Audit_Schema_Coverage',
+            'Easy_MCP_AI\\Tools\\Schema\\List_Schema_Types',
+
             // Filesystem — theme and plugin source file access
             'Easy_MCP_AI\\Tools\\Filesystem\\Get_Theme_File',
             'Easy_MCP_AI\\Tools\\Filesystem\\List_Theme_Files',
