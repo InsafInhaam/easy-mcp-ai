@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once EASY_MCP_AI_PLUGIN_DIR . 'includes/class-activator.php';
 require_once EASY_MCP_AI_PLUGIN_DIR . 'includes/class-deactivator.php';
+require_once EASY_MCP_AI_PLUGIN_DIR . 'includes/class-github-updater.php';
 
 class Plugin {
 
@@ -39,6 +40,8 @@ class Plugin {
         \add_action( 'rest_api_init', array( $this, 'register_rest_routes' ) );
         \add_action( 'init', array( $this, 'handle_well_known' ), 0 );
         \add_action( 'wp_head', array( $this, 'output_post_schema' ) );
+
+        new GitHub_Updater( EASY_MCP_AI_PLUGIN_FILE, EASY_MCP_AI_VERSION );
         
         
         
